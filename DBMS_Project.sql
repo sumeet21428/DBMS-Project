@@ -863,3 +863,58 @@ BEGIN
 END $$
 DELIMITER ;
 # THIS TRIGGER CALCULATES THE TOTAL COST OF CUSTOMER PURCHASE AND CREATES A NEW COLUMN IN THE CUSTOMER_RECIUEPT TABLE CONSISTING OF THE SAME
+
+# Non-conflicting transaction 1
+BEGIN;
+INSERT INTO Products
+VALUES (0007, 'Bond', 'Goat', 99, 50);
+COMMIT;
+
+
+
+# Non-conflicting transaction 2
+BEGIN;
+UPDATE Products
+SET Prod_price = Prod_price*0.5
+WHERE Prod_Stock>0;
+COMMIT;
+
+#Non-conflicting transaction 3
+BEGIN;
+UPDATE Payment_Portal
+SET Payment_Status = 'PAID'
+WHERE Payment_Type = 'CASH';
+COMMIT;
+
+#Non-conflicting transactions 4
+BEGIN;
+DELETE FROM Store
+WHERE Num_Workers<100;
+COMMIT;
+
+#transaction 1
+BEGIN;
+
+UPDATE Products SET Prod_Stock = Prod_Stock - 10 WHERE Prod_price < 50 ;
+
+SELECT Prod_Stock FROM Products WHERE Prod_ID = 2116;
+
+COMMIT;
+
+#transaction 2
+BEGIN ;
+
+UPDATE Customer_Reciept SET Quantity = 50 WHERE C_ID = 2632 AND Prod_id = 6148;
+
+INSERT INTO Products (`Prod_ID`, `Prod_Name`, `Prod_Desc`, `Prod_price`, `Prod_Stock`) VALUES (7273, ' Strawberry dipped chocolates', '', '37.33', '400');
+
+COMMIT;
+
+
+
+
+
+
+
+
+
