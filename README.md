@@ -1,5 +1,6 @@
 # DBMS-Project
 An e2e based database application for a dairy product company, as part of our DBMS course project.
+![Screenshot](Screenshot%202023-05-29%20at%207.33.01%20PM.png)
 
 ### Shlok Vinodkumar Mehroliya (2021421) 
 ### Sumeet Mehra (2021428)
@@ -80,4 +81,3 @@ processed
 requirements from each page. One products can be in different
 categories.
 
-![Screenshot](Screenshot%202023-05-29%20at%207.33.01%20PM.png)
