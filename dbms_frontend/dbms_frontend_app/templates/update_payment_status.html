@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Payment Status</title>
+</head>
+<body>
+    <h1>Update Payment Status</h1>
+    
+    <form method="POST" action="{% url 'update_payment_status' %}">
+        {% csrf_token %}
+        <label for="payment_type">Payment Type:</label>
+        <input type="text" id="payment_type" name="payment_type"><br>
+        
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

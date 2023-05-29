@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Store</title>
+</head>
+<body>
+    <h1>Delete Store</h1>
+    
+    <form method="POST" action="{% url 'delete_store' %}">
+        {% csrf_token %}
+        <label for="num_workers">Number of Workers:</label>
+        <input type="text" id="num_workers" name="num_workers"><br>
+        
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Product Price</title>
+</head>
+<body>
+    <h1>Update Product Price</h1>
+    
+    <form method="POST" action="{% url 'update_product_price' %}">
+        {% csrf_token %}
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

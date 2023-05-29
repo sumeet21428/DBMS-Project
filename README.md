@@ -79,3 +79,5 @@ processed
 ● Making different pages for different category products or different
 requirements from each page. One products can be in different
 categories.
+
+![Screenshot](/Users/sumitmehra/Workspace/DBMS-Project/Screenshot%202023-05-29%20at%207.33.01%20PM.png)
